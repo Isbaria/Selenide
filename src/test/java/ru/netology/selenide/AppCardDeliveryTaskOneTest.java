@@ -24,12 +24,12 @@ public class AppCardDeliveryTaskOneTest {
     public void shouldBeSuccesfullyCompleted() {
 
         open("http://localhost:9999");
-        $("[data-test-id=city] [placeholder='Город']").setValue("Талдом");
+        $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
         String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id=date] input").setValue(planningDate);
-        $("[data-test-id=date] input").setValue("Чан Джеки");
-        $("[data-test-id=date] input").setValue("+79996663322");
+        $("[data-test-id=name] [type=text]").setValue("Чан Джеки");
+        $("[data-test-id=phone] [type=tel]").setValue("+79996663322");
         $("[data-test-id='agreement']").click();
         $("button.button").click();
         $(".notification__content")
